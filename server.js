@@ -1,4 +1,6 @@
 const mongoose = require("mongoose");
+const express = require("express");
+const app = express();
 const Person = require("./Models/Person");
 mongoose.connect(
   "mongodb://localhost/contactDB",
@@ -111,3 +113,6 @@ const run = async () => {
 };
 
 run();
+app.listen(4000, () => {
+  console.log("server is runnig on port 4000");
+});
